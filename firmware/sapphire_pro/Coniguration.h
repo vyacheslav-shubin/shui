@@ -677,10 +677,10 @@
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
 #define USE_XMIN_PLUG
-#define USE_YMIN_PLUG
+//#define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
 //#define USE_XMAX_PLUG
-//#define USE_YMAX_PLUG
+#define USE_YMAX_PLUG
 #define USE_ZMAX_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
@@ -1218,7 +1218,7 @@
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
 #define X_HOME_DIR -1
-#define Y_HOME_DIR -1
+#define Y_HOME_DIR 1
 #define Z_HOME_DIR -1
 
 // @section machine
@@ -2542,46 +2542,7 @@
 #define TFT_SH_UI
 
 #ifdef TFT_SH_UI
-#define MKS_WIFI_MODULE
-// MKS WiFi module
-//#define HAS_TFT_LVGL_UI	1
-#define HAS_SH_UI	1
-#define preheat_0_label	PLA
-#define preheat_1_label	PETG
-#define preheat_2_label	SBS
-#define preheat_3_label	ABS
-#define PREHEAT_COUNT 4
-#define TOUCH_CALIBRATION_X 16576
-#define TOUCH_CALIBRATION_Y -12224
-#define TOUCH_OFFSET_X -18
-#define TOUCH_OFFSET_Y 343
-#define TOUCH_ORIENTATION TOUCH_LANDSCAPE
-#define SERIAL_RUNTIME_HOOK 1
-#define UTF_FILENAME_SUPPORT
-#define SCROLL_LONG_FILENAMES
-
-#ifndef HAS_TFT_XPT2046
-#define HAS_TFT_XPT2046	1
-#endif
-
-#define FILAMENT_LOAD_UNLOAD_GCODES
-#define NOZZLE_PARK_FEATURE
-#define NOZZLE_PARK_XY_FEEDRATE 2000
-#define NOZZLE_PARK_Z_FEEDRATE 1000
-#define NOZZLE_PARK_POINT {20, 20, 20}
-
-#define BABYSTEPPING
-#define BABYSTEP_DISPLAY_TOTAL
-
-#ifndef PAUSE_PARK_NO_STEPPER_TIMEOUT
-#define PAUSE_PARK_NO_STEPPER_TIMEOUT
-#endif
-
-
-#define SUICIDE_PIN                     PB2   // Enable MKSPWC SUICIDE PIN
-#define SUICIDE_PIN_INVERTING          false  // Enable MKSPWC PIN STATE
-//#define KILL_PIN                        PA2   // Enable MKSPWC DET PIN
-//#define KILL_PIN_STATE                  true  // Enable MKSPWC PIN STATE
+#include "shui.h"
 #else
 #define HAS_SH_UI	0
 #endif
