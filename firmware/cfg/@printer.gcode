@@ -16,7 +16,7 @@ M203 X400.00 Y400.00 Z10.00 E200.00
 M201 X1000.00 Y1000.00 Z100.00 E1000.00
 
 ;Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
-M204 P1000.00 R1000.00 T1000.00
+M204 P1000.00 R1000.00 T1001800.00
 
 ; Advanced: B<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> J<junc_dev>
 M205 B20000.00 S0.00 T0.00 J0.01
@@ -113,6 +113,8 @@ M117 SHUI M10 S16|M81
 M117 SHUI M10 S17|G91|G1 T%d E%3.1f F2500|G90
 ;FILAMENT_UNLOAD 18
 M117 SHUI M10 S18|G91|G1 T%d E-%3.1f F2500|G90
+;STEPPERS OFF 19
+M117 SHUI M10 S19|M81|M300
 
 
 ;Home UI snippets
