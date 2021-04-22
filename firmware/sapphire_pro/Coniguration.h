@@ -20,7 +20,7 @@
  *
  */
 #pragma once
-#include "src/lcd/extui/lib/shui/Config.h"
+#include "../Config.h"
 /**
  * Configuration.h
  *
@@ -1235,7 +1235,8 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS ((float)SHUI::config.machine_size.z)
+#define Z_MAX_POS 300
+//((float)SHUI::config.machine_size.z)
 
 /**
  * Software Endstops
@@ -1583,10 +1584,6 @@
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
-
-// Validate that endstops are triggered on homing moves
-#define VALIDATE_HOMING_ENDSTOPS
-#define VALIDATE_HOMING_ENDSTOPS_ACTIVE	is_endstop_hit_validate()
 
 // @section calibrate
 
@@ -2540,12 +2537,7 @@
 //#define TFT_COLOR_UI
 //#define TFT_LVGL_UI
 #define TFT_SH_UI
-
-#ifdef TFT_SH_UI
 #include "shui.h"
-#else
-#define HAS_SH_UI	0
-#endif
 
 #if ENABLED(TFT_LVGL_UI)
 #define MKS_WIFI_MODULE  // MKS WiFi module
@@ -2578,7 +2570,7 @@
 #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
 
-  #define TOUCH_SCREEN_CALIBRATION
+  //#define TOUCH_SCREEN_CALIBRATION
 
   //#define TOUCH_CALIBRATION_X 12316
   //#define TOUCH_CALIBRATION_Y -8981
