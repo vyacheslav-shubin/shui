@@ -16,6 +16,14 @@ M2002.1 X1 Y1 Z1
 ;set manual leveling points
 M2003 B20
 
+M2008 X20 Y20 Z20 E5 F1000	;Filament change point (X, Y, dZ, dE-retract feedrate)
+
+;WiFi settings
+
+M2009.1 S:HOME_NETWORK P:pleaseplease
+M2009.2 S:SHUI P:pleaseplease
+M2009 M1
+
 ; Power control
 ;F - flags. F=sum of:
 ;	1 - module exists,
@@ -24,7 +32,7 @@ M2003 B20
 ;	8 - use fan
 ;S - delay before power off (0-255 sec)
 ;T - hotend temperature (0-255 celsius)
-M2003 F15 S120 T60
+M2004 F15 S120 T60
 
 ; Units in mm (mm)
 G21
