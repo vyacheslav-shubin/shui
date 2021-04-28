@@ -2536,12 +2536,7 @@
 //#define TFT_COLOR_UI
 //#define TFT_LVGL_UI
 #define TFT_SH_UI
-
-#ifdef TFT_SH_UI
 #include "shui.h"
-#else
-#define HAS_SH_UI	0
-#endif
 
 #if ENABLED(TFT_LVGL_UI)
 #define MKS_WIFI_MODULE  // MKS WiFi module

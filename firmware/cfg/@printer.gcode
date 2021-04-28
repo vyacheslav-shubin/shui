@@ -1,8 +1,9 @@
 ;https://t.me/joinchat/Uo-lWdZznR8Yfecb
 
 M117 SHUI M414 S1      		    ;set language RU
-
 M117 SHUI M1 X220 Y220 Z250      		;set machine size
+
+
 
 ; Units in mm (mm)
 G21    
