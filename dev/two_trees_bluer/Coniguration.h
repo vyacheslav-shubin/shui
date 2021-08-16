@@ -807,19 +807,19 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING (is_endstop_inverted(X_MIN)) // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING (is_endstop_inverted(Y_MIN)) // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING (is_endstop_inverted(Z_MIN)) // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING (is_endstop_inverted(X_MAX)) // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING (is_endstop_inverted(Y_MAX)) // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING (is_endstop_inverted(Z_MAX)) // Set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING (is_endstop_inverted(Z_MIN_PROBE)) // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 /**
  * Stepper Drivers
@@ -1310,8 +1310,8 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR is_motor_axis_inverted(E0)
-#define INVERT_E1_DIR is_motor_axis_inverted(E1)
+#define INVERT_E0_DIR is_motor_axis_inverted(E1)
+#define INVERT_E1_DIR is_motor_axis_inverted(E2)
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
 #define INVERT_E4_DIR false
