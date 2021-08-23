@@ -1,5 +1,5 @@
 ;SHUI printer backup
-;Sapphire Pro, 4*2029
+;Sapphire Pro, 4*2209
 M414 S1
 G21 ;Units in mm (mm)
 M2000.0 X0 Y0 Z0
