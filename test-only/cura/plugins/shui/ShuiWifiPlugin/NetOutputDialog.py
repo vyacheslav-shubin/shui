@@ -26,7 +26,7 @@ class Language:
       pass
 
   def lang_en(self):
-    self.title='SHUI Prusa plugin'
+    self.title='SHUI Cura plugin'
     self.start_printing = "Start printing"
     self.close_on_complete = "Close on complete"
     self.name83 = "8.3 name"
@@ -37,7 +37,7 @@ class Language:
     self.error = "Error"
 
   def lang_ru(self):
-    self.title='SHUI Prusa плагин'
+    self.title='SHUI Cura плагин'
     self.start_printing = "Запустить печать"
     self.close_on_complete = "Закрыть по окончании"
     self.name83 = "8.3 имя"
