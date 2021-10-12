@@ -24,6 +24,15 @@ M2009.1 S:HOME_NETWORK P:pleaseplease
 M2009.2 S:SHUI P:pleaseplease
 M2009 M1
 
+;задание параметров telegram бота
+M2009.3 С:-1001197511741
+;задание параметров яндекс диска
+;M2009.4 K:***************************************
+;    K - ключ доступа
+;запрос ключа доступа
+;https://oauth.yandex.ru/authorize?response_type=token&client_id=aa7495d659324bba959517fff3306c7d
+
+
 ; Power control
 ;F - flags. F=sum of:
 ;	1 - module exists,
@@ -53,12 +62,14 @@ M205 B20000.00 S0.00 T0.00 J0.01
 
 ; Home offset:
 M206 X0.00 Y0.00 Z0.00
+; Probe offset:
+M851 X0 Y-38 Z-2 C10 L-2
 
 ; Material heatup parameters:
-M145 S0 B60 H200 ;Material preset
-M145 S1 B90 H230
-M145 S2 B70 H240
-M145 S3 B110 H210
+M145 S0 B60 H200    ;PLA Material preset
+M145 S1 B70 H240    ;PETG
+M145 S2 B110 H220   ;ABS
+M145 S3 B100 H230   ;USER/NYLON
 
 ;PID Settings
 M301 E0 P22.20 I1.08 D114.00
@@ -71,6 +82,8 @@ M603 T1 L800 U850
 
 ;Cold Extrude
 M302 S170 P0
+
+M900 K0
 
 M500
 M0 S2 Configured
