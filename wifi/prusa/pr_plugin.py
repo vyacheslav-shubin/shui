@@ -2,8 +2,8 @@
 #Перечень Ip адресов принтеров. Для прямого подрключения к модулю ShuiWiFi порт указывать не надо
 #ip адрес принтера можно узнать в виджете состояния WiFi
 printers = [
-    {'name':'Main', 'ip':'127.0.0.1:8081', "esp32":True},
-    {'name':'Secondary', 'ip':'192.168.2.1', "esp32":False}
+    {'name':'Local:8081', 'ip':'127.0.0.1:8081', "esp32":True},
+    {'name':'Dev', 'ip':'192.168.2.192', "esp32":False}
 ]
 default_override=False
 default_sendWiFi=False
@@ -23,13 +23,13 @@ from io import BytesIO
 if len(argv)>1:
     file_in=sys.argv[1]
 else:
-    file_in  = "bh.gcode"   #тестовый файл
+    file_in  = "/home/shubin/electronic/firmware/mks-robin/my/shui-src/bh.gcode"   #тестовый файл
 
 
 class Language:
     def __init__(self, lang):
         self.lang_en()
-        if lang=='ua':
+        if language=='ua':
             self.lang_ru()
             self.lang_ua()
         elif language=='ru':
@@ -190,10 +190,9 @@ def qt_application():
     from PyQt5 import QtCore
     from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QProgressBar, QCheckBox, QLineEdit, QComboBox)
     from PyQt5.QtGui import (QPixmap, QImage)
-    from PyQt5.QtNetwork import (QHttpMultiPart, QHttpPart, QNetworkRequest, QNetworkAccessManager, QNetworkReply)
+    from PyQt5.QtNetwork import (QHttpMultiPart, QHttpPart, QNetworkRequest, QNetworkAccessManager, QNetworkReply, QNetworkProxy)
 
     app=QApplication(sys.argv)
-    screen = app.primaryScreen()
 
     class MainWidget(QWidget):
         def __init__(self):
@@ -377,6 +376,7 @@ def qt_application():
                 gcode=g_file.read()
             g_file.close()
             try:
+                QNetworkProxy.setApplicationProxy(QNetworkProxy())
                 pu = printers[self.cbSelectedPrinter.currentIndex()]["ip"]
                 request = QNetworkRequest(QtCore.QUrl("http://%s/upload" % pu))
                 request.setRawHeader(b'Connection', b'keep-alive')
@@ -386,7 +386,7 @@ def qt_application():
                 if self.cbEsp32.isChecked():
                     post_data = gcode
                     request.setRawHeader(b'Content-Type', b'application/octet-stream')
-                    request.setRawHeader(b'File-Name', file_in.encode())
+                    request.setRawHeader(b'File-Name', network_file_name.encode())
                 else:
                     post_data = QHttpMultiPart(QHttpMultiPart.FormDataType)
                     part = QHttpPart()
@@ -413,6 +413,7 @@ def qt_application():
 
         def show(self):
             super().show();
+            screen = app.primaryScreen()
             self.move(screen.size().width()/2-self.width()/2, screen.size().height()/2-self.height()/2)
 
     widget=MainWidget()
