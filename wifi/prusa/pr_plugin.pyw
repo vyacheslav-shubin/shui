@@ -2,11 +2,10 @@
 #Перечень Ip адресов принтеров. Для прямого подрключения к модулю ShuiWiFi порт указывать не надо
 #ip адрес принтера можно узнать в виджете состояния WiFi
 printers = [
-    {'name':'Local:8081', 'ip':'127.0.0.1:8081', "esp32":True},
-    {'name':'Dev', 'ip':'192.168.2.192', "esp32":False}
+    {'name':'FBG5', 'ip':'192.168.1.131', "esp32":False}
 ]
-default_override=False
-default_sendWiFi=False
+default_override=True
+default_sendWiFi=True
 default_start_priting=True
 language="ru"   # допустимое значение ru, en, ua
 
@@ -101,6 +100,8 @@ class GCodeParser:
                     continue
                 if self.check_key(d, "; layer_height = ", "layer_height"):
                     continue
+                if self.check_key(d, ";LAYER_COUNT:", "layer_count"):
+                    continue
             if (d.startswith("; thumbnail end")) and (current_thumb is not None):
                 current_thumb["end_row"] = index - 1
                 current_thumb=None
@@ -159,6 +160,9 @@ class GCodeParser:
                 out_file.write(self.generate_preview(self.small_preview))
                 out_file.write(self.generate_preview(self.large_preview))
                 out_file.write(";POSTPROCESSING SHUI PRUSA PLUGIN\r\n")
+                if self.meta["layer_count"] is not None:
+                    layer_count=int(self.meta["layer_count"])
+                    out_file.write(";LAYER_COUNT: {:}\r\n".format(layer_count))
                 if self.meta["filament used"] is not None:
                     f_used=float(self.meta["filament used"])
                     out_file.write(";Filament used: {:1.5f}\r\n".format(f_used/1000))
