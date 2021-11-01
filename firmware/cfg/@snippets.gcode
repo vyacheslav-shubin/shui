@@ -17,12 +17,16 @@ M2005 S21|M117 Prepare for power off    ;* PRE_POWER_OFF HARDWARE BUTTON
 M2005 S22|M25|G60|G91|G1Z20T0E-10|G90|G1X20Y20|M2006N2      ;* PAUSE
 M2005 S23|G91|G1E10|G61|G90|M24                             ;* RESUME
 M2005 S24|G61XY|M24|M2097                                   ;* RESUME AND SKIP ITEM
+M2005 S25|G28XY|M300                                        ;* AFTER PRINT TERMINATE ACTION
+
+
 
 M2005 S30|G91|G1%s%1.1fF1500|G90        ;* MOVE X or Y relative
 M2005 S31|G90|G1X%1.1fY%1.1fF1500       ;* MOVE X and Y absolute
 M2005 S32|G91|G1Z%1.1fF1000|G90         ;* MOVE Z relative
 M2005 S33|G90|G1Z%fF1000                ;* MOVE Z absolute
-M2005 S34|G91|G1E%1.1fF1000             ;MOVE E relative
+M2005 S34|G91|G1E%1.1fF1000|G90         ;MOVE E relative
+M2005 S34|G91|G1X%1.1fY%1.1fF1500|G90   ;* MOVE XY relative
 
 ;M2005 S40|M0 S2 snippet 40             ;Home UI snippets
 ;M2005 S41|M0 S2 snippet 41
@@ -51,5 +55,6 @@ M2005 S56#M810 M117 Hello#M2018S10A3R810                          ;TIMER UI snip
 M2005 S57#M810 M300#M2018S10A3R810
 M2005 S58#M810 M300#M2018S2A3R810
 M2005 S59#M810 M300#M2018S5A1R810
+M2005 S60|M140S0|M300|M117 Yougurt completted               ;* YOGURT DEFAULT SNIPPET
 
 M0 S2 Snippets updated
