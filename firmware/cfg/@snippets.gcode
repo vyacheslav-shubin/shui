@@ -26,7 +26,7 @@ M2005 S31|G90|G1X%1.1fY%1.1fF1500       ;* MOVE X and Y absolute
 M2005 S32|G91|G1Z%1.1fF1000|G90         ;* MOVE Z relative
 M2005 S33|G90|G1Z%fF1000                ;* MOVE Z absolute
 M2005 S34|G91|G1E%1.1fF1000|G90         ;MOVE E relative
-M2005 S34|G91|G1X%1.1fY%1.1fF1500|G90   ;* MOVE XY relative
+M2005 S35|G91|G1X%1.1fY%1.1fF1500|G90   ;* MOVE XY relative
 
 ;M2005 S40|M0 S2 snippet 40             ;Home UI snippets
 ;M2005 S41|M0 S2 snippet 41
