@@ -3,6 +3,8 @@ Marlin 2, SHUI Beta 0.1
 
 
 Полезные ссытки:
+	Описание прошивки от пользователей (отдельное спасибо Виктору): http://shui.hardisoft.ru 
+	Бессистемный техноблог (Виктор): https://www.youtube.com/channel/UCjAcQzsKd0Hd_fnlPUN26JQ
 	Ранние версии : https://github.com/vyacheslav-shubin/mks-robin-nano35-binary/tree/master/m2-alpha
 	Настройка телеграмм бота: https://docs.google.com/document/d/13jDTtNGEu4eXHo-b5OVEF_yLy80kEXV90A_X9vX3aRA
 
