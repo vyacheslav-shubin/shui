@@ -1492,3 +1492,22 @@ M2002.2 - Прочее
 		каталог RN12 - прошивка для Robin Nano 1.1, 1.2 и их клонов
 		каталог F4_RN13 - Nano 1.3
 	-Переключаемая кинематика
+	
+2022-02-04 (test only) 
+	- M2016.1 - нагреватель экструдера
+	    E - номер (0, 1)
+	    L - предел нагрева
+	    S - сенсор
+		0 - // Marlin #1, R25 = 100 kOhm, beta25 = 4092 K, 4.7 kOhm pull-up, bed thermistor
+		1 - // Marlin #1047, Pt1000 with 4k7 pullup
+		2 -	// Marlin #5, R25 = 100 kOhm, beta25 = 4267 K, 4.7 kOhm pull-up
+		    // 100k ParCan thermistor (104GT-2)
+		3 - // Marlin #9, R25 = 100 kOhm, beta25 = 3960 K, 4.7 kOhm pull-up, GE Sensing AL03006-58.2K-97-G1
+		4 - // R25 = 2.5 MOhm, beta25 = 4500 K, 4.7 kOhm pull-up, DyzeDesign 500 °C Thermistor
+	    C - Точка пересечения кривых температур
+	    T - Масштабный коэффициент (0.5-2)
+		To=(Ti-C)*T+C
+	    Y - 0/1 dYmanic PID
+	    F - температура быстрого нагрева
+	-Robin Nano 1.3 -WiFi в полном объеме  	
+		
