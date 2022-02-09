@@ -1513,3 +1513,15 @@ M2002.2 - Прочее
 		
 2022-02-08 (dev) 
 	-Вентилятор обдува модели. SoftPWM. Включение: Настройка/вентиляторы
+2022-02-09 (dev) 
+	-Расширенная таблица t_66
+	// R25 = 2.5 MOhm, beta25 = 4500 K, 4.7 kOhm pull-up, DyzeDesign 500 °C Thermistor
+	-Расширенная таблица t_1010
+
+		0 - // Marlin #1, R25 = 100 kOhm, beta25 = 4092 K, 4.7 kOhm pull-up, bed thermistor
+		1 - // Marlin #1047, Pt1000 with 4k7 pullup
+		2 - // Marlin #5, R25 = 100 kOhm, beta25 = 4267 K, 4.7 kOhm pull-up
+		    // 100k ParCan thermistor (104GT-2)
+		3 - // Marlin #9, R25 = 100 kOhm, beta25 = 3960 K, 4.7 kOhm pull-up, GE Sensing AL03006-58.2K-97-G1
+		4 - // Marlin #66, R25 = 2.5 MOhm, beta25 = 4500 K, 4.7 kOhm pull-up, DyzeDesign 500 °C Thermistor
+		5 - // Marlin #1010, Pt1000 with 1k0 pullup
