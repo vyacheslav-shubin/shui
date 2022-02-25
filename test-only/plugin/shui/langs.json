@@ -1,0 +1,46 @@
+{
+  "ru": {
+    "inherited":["en"],
+    "lang": {
+      "close": "Закрыть",
+      "connect": "Подключить",
+      "disconnect": "Отключить",
+
+      "file": "Файл",
+      "terminal": "Терминал",
+      "printer": "Принтер",
+
+      "start-printing": "Запустить печать",
+      "output-name": "Имя файла",
+
+      "save-to-file": "Сохранить файл",
+      "send-to-printer": "Отправить на печать",
+      "send-to-yandex": "Сохранить на Яндекс диске"
+    }
+  },
+  "ua": {
+    "inherited":["en", "ru"],
+    "lang": {
+
+    }
+  },
+  "en": {
+    "lang": {
+      "title": "SHUI Wifi Plugin",
+      "close": "Close",
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+
+      "file": "File",
+      "terminal": "Terminal",
+      "printer": "Printer",
+
+      "start-printing": "Start printing",
+      "output-name": "File name",
+
+      "save-to-file": "Save to file",
+      "send-to-printer": "Send to SHUI Wifi",
+      "send-to-yandex": "Send to Yandex disk"
+    }
+  }
+}
