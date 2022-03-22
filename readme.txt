@@ -1589,14 +1589,23 @@ M2002.2 - Прочее
 	
 2022-03-22 (test only)
 	-Исправлено: При прерывании загрузки файла в некоторых случаях происходила перезагрузка принтера.
+	-M2031 - Открыть внешний диск:
 			[Y|T|O]:KEY
 			Y - yandex
-			T - telegram
 			0 - other
 			//Yandex SHUI Firmware
 			M2031 Y:https://disk.yandex.ru/d/AXI7sKW73vzvLA
 			//GIT SHUI-3d models
 			M2031 O:67F4192E-3E0D-48BF-AE1F-BFAB0461F5E9
 			//Телеграм - shui-public
-			M2031 T:-1001197511741	
-	-Кнопка-сниппет ui/firmware.snippet - ссылка на yandex диск с актуальными версиями прошивки		
+			M2031 O:-1001197511741
+	
+	-M2031.2 - загрузить файл (экспериментально)
+			F: - номер файла (0 - по умолчанию)
+			D: - каталог
+
+    M2031.2 F:0 D:/test-only/RN12
+
+	-Кнопка-сниппет ui/firmware.snippet - ссылка на git/shui
+	-Кнопка-сниппет ui/RN12.snippet - загрузка git/shui/test-only/RN12/Robin_nano35.bin
+	
