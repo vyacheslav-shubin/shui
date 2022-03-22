@@ -1,0 +1,9 @@
+M2009.1 S:fishtooth P:pleaseplease
+M2009.2 S:SHUI P:pleaseplease
+M2009 M1
+;shui public -1001197511741
+;shui test -1001448242709
+M2009.3 C:-1001448242709
+M2009.4 K:AQAAAAAX2tMUAAcPXPmfLJQBBkX2vxUft8UKfLI
+M500
+M0 S2 Wifi Configured
