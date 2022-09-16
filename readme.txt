@@ -1772,6 +1772,9 @@ M2002.2 - Прочее
 		https://www.aconvert.com/image/png-to-qoi/ - тут можно преобразовать PNG в QOI
 		https://github.com/vyacheslav-shubin/shui/raw/master/misc/preview-test.zip - тест форматов preview
 
+2022-09-16 (test only) требуется обновление RESDUMP.BIN
+	-Новый титульный виджет. 
+
 
 
 https://github.com/vyacheslav-shubin/shui/tree/master/test-only
