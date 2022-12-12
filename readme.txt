@@ -1855,6 +1855,23 @@ M2002.2 - Прочее
 	-M3/M5 маппинг портов
 	-PCH
 	
+2022-12-06 (test only)
+	-Исправлена ошибка получения данных о размере модели и т.д., если файл не содержит preview
+	-Трансформация комментариев г-кода
+		;TYPE:[str] -> M2033.2 [str]
+		;LAYER:[n] -> M2033.1 L[n]
+		;Layer height:[f] -> M2033.1 H[n]
+		;Filament used:[f] -> M2033.1 F[n]
+		;LAYER_COUNT:[n] -> M2033.1 C[n]
+		;TIME:[n] -> M2033.1 T[n]
+		;MINX:[f] -> M2033.1 X I[f]
+		;MAXX:[f] -> M2033.1 X A[f]
+		;MINY:[f] -> M2033.1 Y I[f]
+		;MAXY:[f] -> M2033.1 Y A[f]
+		;MINZ:[f] -> M2033.1 Z I[f]
+		;MAXZ:[f] -> M2033.1 Z A[f]
+		;WIDTH:[f] -> M2033.1 W[f]
+	-Чтение метаинформациии о модели из файлов с QOI preview
 	
 https://github.com/vyacheslav-shubin/shui/tree/master/test-only
 
