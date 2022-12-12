@@ -1871,7 +1871,7 @@ M2002.2 - Прочее
 		;MINZ:[f] -> M2033.1 Z I[f]
 		;MAXZ:[f] -> M2033.1 Z A[f]
 		;WIDTH:[f] -> M2033.1 W[f]
-	-Чтение метаинформациии о модели из файлов с QOI preview
+	-Чтение метаинформации о модели из файлов с QOI preview
 	
 https://github.com/vyacheslav-shubin/shui/tree/master/test-only
 
