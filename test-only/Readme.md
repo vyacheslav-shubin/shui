@@ -4,7 +4,7 @@
 **Текущая версия**: https://github.com/ipcn/shui-slicers-plugin/releases/
 
 ---
-# SHUI wirmware. Test only
+# SHUI firmware. Test only
 
 ## Plugin for slicers
 **Current version**: https://github.com/ipcn/shui-slicers-plugin/releases/
